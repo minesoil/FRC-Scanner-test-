@@ -1,20 +1,70 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
   <head>
+    <!-- Basic Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="description" content="FRC Scout Scanner – fast, mobile-friendly QR scouting for competitions." />
+
     <title>FRC Scout Scanner</title>
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- External Libraries via CDN to ensure compatibility without npm install -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js"></script>
-    <link rel="stylesheet" href="/styles.css">
-</head>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- Base Styling (fallback if CSS fails to load) -->
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: radial-gradient(1200px 800px at 50% -20%, #1e293b, #020617);
+        color: #e5e7eb;
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      #root {
+        height: 100%;
+      }
+
+      /* Simple loading screen */
+      .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        font-size: 0.95rem;
+        letter-spacing: 0.05em;
+        color: #94a3b8;
+      }
+    </style>
+  </head>
+
   <body>
-    <div id="root"></div>
+    <noscript>
+      <div class="loading">
+        JavaScript is required to run FRC Scout Scanner.
+      </div>
+    </noscript>
+
+    <div id="root">
+      <div class="loading">Loading FRC Scout Scanner…</div>
+    </div>
+
+    <!-- App Entry -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>
